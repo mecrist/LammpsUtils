@@ -121,7 +121,7 @@ do b=1,nconf !loop on step number
  endif
 
  if(m==1)then
-   sigma(b)=abs(dpdr(b))*1.01325E-5*0.5
+   sigma(b)=(dpdr(b))*1.01325E-5*0.5
    sigmabig=sigmabig+(sigma(b)) !Summing up all the integral values
    o=o+1 !incrementing the counter, to get the average after
    m=0
