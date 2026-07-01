@@ -2,14 +2,6 @@
 ! dens-radial.f90 — radial mass density profile ρ(r) [g/cm³] by molecule type
 !   Bins atoms by distance r = sqrt(x²+y²) from the pore axis (z-axis),
 !   restricted to a z-range that excludes entrance effects.
-!
-! Key fixes vs previous version:
-!   - moltype(ii) instead of moltype(nnmol(ii)) (nnmol was never populated)
-!   - nnmol(ii) now read from trajectory (6th column: id type mol xu yu zu)
-!   - O(natoms) binning per frame (direct bin index, no nested loop over bins)
-!   - Eliminated nr(:,:,:) accumulation array; accumulate massnr directly
-!   - Moved massnr zero-init inside frame loop (was already OK but clearer)
-!   - Output header corrected (nmoltype = 2, not 11)
 ! ===========================================================================
 
 program dens_radial
